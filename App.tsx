@@ -31,6 +31,7 @@ type SectionProps = PropsWithChildren<{
 
 function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -60,7 +61,7 @@ function App(): JSX.Element {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+    };
 
   return (
     <SafeAreaView style={backgroundStyle}>
