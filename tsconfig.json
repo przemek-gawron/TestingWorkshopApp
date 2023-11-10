@@ -2,8 +2,8 @@
   "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./src",
-    "types": ["@testing-library/jest-native", "jest"]
-},
+    "types": ["@testing-library/jest-native", "jest"],
+  },
   "include": [
     "./src/**/*.ts",
     "./src/**/*.tsx",

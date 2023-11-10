@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react-native';
+import React from 'react';
+import {render, screen} from '@testing-library/react-native';
 import UserTile from 'components/userTile';
 
 test('form submits two answers', () => {
-  render(<UserTile/>);
+  render(<UserTile />);
   expect(screen.getByText('UserTile')).toBeOnTheScreen();
 });
