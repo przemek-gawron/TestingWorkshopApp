@@ -1,5 +1,13 @@
 module.exports = {
   root: true,
-  extends: '@callstack',
-  'import/no-extraneous-dependencies': 'off',
+  extends: ['@callstack', 'prettier'],
+  plugins: ['prettier', 'react', '@typescript-eslint', 'eslint-plugin-import'],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
+  },
 };
