@@ -5,18 +5,16 @@
  * @format
  */
 
-import React, { useEffect } from 'react';
-import type {PropsWithChildren} from 'react';
+import React from 'react';
 import {
   SafeAreaView,
 } from 'react-native';
 
 import Navigation from './src/navigation';
-import axios from 'axios';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView >
+    <SafeAreaView style={{flex: 1}} >
       <Navigation />
     </SafeAreaView>
   );
