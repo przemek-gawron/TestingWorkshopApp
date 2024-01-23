@@ -8,7 +8,7 @@ import Navigation from './src/navigation';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView style={styles.container} >
+    <SafeAreaView style={styles.container}>
       <Navigation />
     </SafeAreaView>
   );

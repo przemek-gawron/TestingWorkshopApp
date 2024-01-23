@@ -1,5 +1,6 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {User} from 'api/getUsers/getUser.types';
 import {theme} from 'theme';
 
@@ -8,21 +9,37 @@ interface UserTileProps {
 }
 
 const UserTile = ({user}: UserTileProps) => {
-  // TODO: wrap around touchable and navigate to user details screen
-  // test if we can navigate to user details screen and back to users list
+  // TODO: test if we can navigate to user details screen and back to users list
+
+  const {navigate} = useNavigation();
+  const onTilePressHandler = () => navigate('UserDetails' as never);
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      accessibilityRole="button"
+      onPress={onTilePressHandler}
+      style={styles.container}>
       <View style={styles.imageContainer}>
+        {/* TODO: use some default picure if not provided */}
+        {/* add test to check if default picture is displayed */}
         <Image
           source={{uri: user.picture.large}}
           style={styles.image}
           accessibilityIgnoresInvertColors
         />
       </View>
-      {/* TODO: use some default picure if not provided */}
-      {/* add test to check if default picture is displayed */}
-      <Text>UserTile</Text>
-    </View>
+      <View style={styles.infoContainer}>
+        <Text style={styles.name}>
+          {user.name.title} {user.name.first} {user.name.last}
+        </Text>
+        <Text>Phone: {user.phone}</Text>
+        <Text>Email: {user.email}</Text>
+        <Text>
+          Adress: {user.location.street.name} {user.location.street.number},{' '}
+          {user.location.city}
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
@@ -35,16 +52,25 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     marginVertical: 8,
     borderWidth: 0.5,
-    flexDirection: 'row',
+    // flexDirection: 'row',
     padding: 15,
   },
   imageContainer: {
-    justifyContent: 'center',
+    alignItems: 'center',
   },
   image: {
-    height: 100,
-    width: 100,
+    height: 80,
+    width: 80,
     borderRadius: 50,
+  },
+  infoContainer: {
+    paddingLeft: 10,
+    paddingTop: 10,
+  },
+  name: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 5,
   },
 });
 

@@ -58,7 +58,7 @@
       "./jestSetup.js"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|@react-native|@testing-library/jest-native/extend-expect)/)"
+      "node_modules/(?!(react-native|@react-native|@testing-library/jest-native/extend-expect|@react-navigation/bottom-tabs|@react-navigation/native)/)"
     ]
   },
   "engines": {
