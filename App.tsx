@@ -7,14 +7,21 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
+  SafeAreaView, StyleSheet,
 } from 'react-native';
 
 import Navigation from './src/navigation';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
+
 function App(): JSX.Element {
   return (
-    <SafeAreaView style={{flex: 1}} >
+    <SafeAreaView style={styles.container} >
       <Navigation />
     </SafeAreaView>
   );

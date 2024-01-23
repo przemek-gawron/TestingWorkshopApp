@@ -1,19 +1,20 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Text, View} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Users from 'screens/users';
 import About from 'screens/about';
+import Favourite from 'screens/favourite';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Users">
-        <Stack.Screen name="Users" component={Users} />
-        <Stack.Screen name="About" component={About} />
-      </Stack.Navigator>
+      <Tab.Navigator initialRouteName="Users">
+        <Tab.Screen name="Users" component={Users} />
+        <Tab.Screen name="Favourite" component={Favourite} />
+        <Tab.Screen name="About" component={About} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
