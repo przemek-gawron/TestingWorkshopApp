@@ -5,21 +5,19 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
 } from 'react-native';
 
-import UserTile from './src/components/userTile';
+import Navigation from './src/navigation';
+import axios from 'axios';
 
 function App(): JSX.Element {
   return (
     <SafeAreaView >
-      <UserTile />
-      <UserTile />
-      <UserTile />
-      <UserTile />
+      <Navigation />
     </SafeAreaView>
   );
 }
