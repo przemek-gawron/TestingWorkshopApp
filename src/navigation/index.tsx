@@ -10,6 +10,9 @@ const Tab = createBottomTabNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
+      {/* TODO: test to check if we render Users screen at the begining  */}
+      {/* TODO: test to check if we can switch between tabs  */}
+      {/* TODO: test to check if tabs are visible with correct text/icon  */}
       <Tab.Navigator initialRouteName="Users">
         <Tab.Screen name="Users" component={Users} />
         <Tab.Screen name="Favourite" component={Favourite} />

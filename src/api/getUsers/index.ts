@@ -1,5 +1,5 @@
 import axios, {AxiosResponse} from 'axios';
-import {UserResponseType} from 'getUser.types';
+import {UserResponseType} from 'api/getUsers/getUser.types';
 
 export const api = axios.create({
   baseURL: 'https://randomuser.me/api/?results=30',
